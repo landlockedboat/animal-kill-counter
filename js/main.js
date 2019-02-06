@@ -17,7 +17,7 @@ const addCard = (card) =>
 
 addCard(getCard("akc-wild_caught_fish", "Peces pescados"));
 addCard(getCard("akc-chickens", "Gallinas"));
-addCard(getCard("akc-farmed_fish", "Pescado de piscifactoría", ""));
+addCard(getCard("akc-farmed_fish", "Peces de piscifactoría", ""));
 addCard(getCard("akc-ducks", "Patos", ""));
 addCard(getCard("akc-pigs", "Cerdos", ""));
 addCard(getCard("akc-rabbits", "Conejos", ""));
