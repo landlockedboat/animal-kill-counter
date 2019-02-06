@@ -1,9 +1,16 @@
-const getCard = (id, name) => 
+const getCard = (id, name, number) => 
 `<div class="card" style="width: 18rem;">
 		<img class="card-img-top" src="img/${id}.jpg" alt="Card image cap">
 		<div class="card-body">
 			<h5 id="${id}" class="card-title">0</h5>
 			<h6 class="card-subtitle mb-2 text-muted">${name}</h6>
+			<p class="card-text">
+				<p><b>Al día</b> - ${Math.round(number / 365).toLocaleString()}</p>
+			<p><b>A la hora</b> - ${Math.round(number / 365 / 24).toLocaleString()}</p>
+			<p><b>Al minuto</b> - ${Math.round(number / 365 / 24 / 60).toLocaleString()}</p>
+				</li>
+			</ul>
+			</p>
 		</div>
 	</div>
 	<br/>`;
@@ -15,23 +22,23 @@ const addCard = (card) =>
 	++currentCol;
 }
 
-addCard(getCard("akc-wild_caught_fish", "Peces pescados"));
-addCard(getCard("akc-chickens", "Gallinas"));
-addCard(getCard("akc-farmed_fish", "Peces de piscifactoría", ""));
-addCard(getCard("akc-ducks", "Patos", ""));
-addCard(getCard("akc-pigs", "Cerdos", ""));
-addCard(getCard("akc-rabbits", "Conejos", ""));
-addCard(getCard("akc-geese", "Ocas", ""));
-addCard(getCard("akc-turkeys", "Pavos", ""));
-addCard(getCard("akc-sheep", "Ovejas", ""));
-addCard(getCard("akc-goats", "Cabras", ""));
-addCard(getCard("akc-cattle", "Vacas", ""));
-addCard(getCard("akc-rodents", "Roedores", ""));
-addCard(getCard("akc-other_birds", "Palomas y otras aves", ""));
-addCard(getCard("akc-buffalo", "Búfalos", ""));
-addCard(getCard("akc-horses", "Caballos", ""));
-addCard(getCard("akc-donkeys", "Burros y mulas", ""));
-addCard(getCard("akc-camels", "Camellos y otros camélidos", ""));
+addCard(getCard("akc-wild_caught_fish", "Peces pescados", 970000000000));
+addCard(getCard("akc-chickens", "Gallinas", 61000000000));
+addCard(getCard("akc-farmed_fish", "Peces de piscifactoría", 38000000000));
+addCard(getCard("akc-ducks", "Patos", 2800000000));
+addCard(getCard("akc-pigs", "Cerdos", 1450000000));
+addCard(getCard("akc-rabbits", "Conejos", 1200000000));
+addCard(getCard("akc-geese", "Ocas", 680000000));
+addCard(getCard("akc-turkeys", "Pavos", 620000000));
+addCard(getCard("akc-sheep", "Ovejas", 540000000));
+addCard(getCard("akc-goats", "Cabras", 440000000));
+addCard(getCard("akc-cattle", "Vacas", 300000000));
+addCard(getCard("akc-rodents", "Roedores", 70000000));
+addCard(getCard("akc-other_birds", "Palomas y otras aves", 60000000));
+addCard(getCard("akc-buffalo", "Búfalos", 25000000));
+addCard(getCard("akc-horses", "Caballos", 50000000));
+addCard(getCard("akc-camels", "Camellos y otros camélidos", 3250000));
+addCard(getCard("akc-donkeys", "Burros y mulas", 3210000));
 
 window.addEventListener('DOMContentLoaded',function(){
 	var updatesPerSecond = 20;
