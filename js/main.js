@@ -1,25 +1,26 @@
-const getCard = (id, name, number) => 
-`<div class="card" style="width: 18rem;">
-		<img class="card-img-top" src="img/${id}.jpg" alt="Card image cap">
-		<div class="card-body">
-			<h5 id="${id}" class="card-title">0</h5>
-			<h6 class="card-subtitle mb-2 text-muted">${name}</h6>
-			<p class="card-text">
-				<p><b>Al día</b> - ${Math.round(number / 365).toLocaleString()}</p>
-			<p><b>A la hora</b> - ${Math.round(number / 365 / 24).toLocaleString()}</p>
-			<p><b>Al minuto</b> - ${Math.round(number / 365 / 24 / 60).toLocaleString()}</p>
-				</li>
-			</ul>
-			</p>
-		</div>
-	</div>
-	<br/>`;
+const getCard = (id, name, number) =>
+`
+<div class="col-sm" id="col-0">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/${id}.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 id="${id}" class="card-title">0</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${name}</h6>
+            <p class="card-text">
+                <p><b>Al día</b> - ${Math.round(number / 365).toLocaleString()}</p>
+                <p><b>A la hora</b> - ${Math.round(number / 365 / 24).toLocaleString()}</p>
+                <p><b>Al minuto</b> - ${Math.round(number / 365 / 24 / 60).toLocaleString()}</p>
+                </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <br />
+</div>
+`;
 
-let currentCol = 0;
-const addCard = (card) => 
-{
-	$(`#col-${currentCol % 3}`).append(card);
-	++currentCol;
+const addCard = (card) => {
+	$("#content").append(card);
 }
 
 addCard(getCard("akc-wild_caught_fish", "Peces pescados", 970000000000));
@@ -40,7 +41,7 @@ addCard(getCard("akc-horses", "Caballos", 50000000));
 addCard(getCard("akc-camels", "Camellos y otros camélidos", 3250000));
 addCard(getCard("akc-donkeys", "Burros y mulas", 3210000));
 
-window.addEventListener('DOMContentLoaded',function(){
+window.addEventListener('DOMContentLoaded', function () {
 	var updatesPerSecond = 20;
 	var animalsKilledPerYear = {
 		"wild_caught_fish": 970000000000,
@@ -63,7 +64,7 @@ window.addEventListener('DOMContentLoaded',function(){
 	};
 
 	var secondsPerYear = 365 * 24 * 60 * 60;
-	var interval = 1000/ updatesPerSecond;
+	var interval = 1000 / updatesPerSecond;
 	var count = 0, start = new Date().getTime();
 
 	function update(intervalCount) {
@@ -71,7 +72,7 @@ window.addEventListener('DOMContentLoaded',function(){
 			var numKilled = animalsKilledPerYear[subset];
 			var countElement = document.getElementById("akc-" + subset);
 			if (countElement) {
-				countElement.innerHTML = Math.round(intervalCount * (numKilled/secondsPerYear) / updatesPerSecond).toLocaleString();
+				countElement.innerHTML = Math.round(intervalCount * (numKilled / secondsPerYear) / updatesPerSecond).toLocaleString();
 			}
 		}
 	}
