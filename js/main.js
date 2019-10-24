@@ -1,6 +1,6 @@
 const getCard = (id, name, number) =>
 `
-<div class="col-sm" id="col-0">
+<div class="col-sm">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="img/${id}.jpg" alt="Card image cap">
         <div class="card-body">
@@ -20,7 +20,7 @@ const getCard = (id, name, number) =>
 `;
 
 const addCard = (card) => {
-	$("#content").append(card);
+	$("#main-content").append(card);
 }
 
 addCard(getCard("akc-wild_caught_fish", "Peces pescados", 970000000000));
